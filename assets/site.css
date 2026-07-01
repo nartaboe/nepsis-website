@@ -1,0 +1,131 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.container {
+    background: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+h1 {
+    font-size: 24px;
+    color: #111;
+    margin-bottom: 8px;
+}
+
+h2 {
+    font-size: 18px;
+    color: #222;
+    margin-top: 30px;
+}
+
+h3 {
+    font-size: 16px;
+    color: #222;
+    margin-top: 24px;
+    margin-bottom: 8px;
+}
+
+p,
+ul,
+ol {
+    font-size: 15px;
+    color: #444;
+}
+
+ul,
+ol {
+    padding-left: 20px;
+}
+
+.date {
+    color: #888;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+a {
+    color: #0066cc;
+}
+
+.site-header {
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #eee;
+}
+
+.site-brand {
+    font-size: 14px;
+    font-weight: 600;
+    color: #111;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+}
+
+.site-nav {
+    margin-top: 12px;
+    font-size: 14px;
+}
+
+.site-nav a {
+    color: #555;
+    text-decoration: none;
+    margin-right: 16px;
+}
+
+.site-nav a:hover,
+.site-nav a.active {
+    color: #111;
+    text-decoration: underline;
+}
+
+.site-footer {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    font-size: 14px;
+    color: #666;
+}
+
+.site-footer a {
+    color: #555;
+    text-decoration: none;
+    margin-right: 12px;
+}
+
+.site-footer a:hover {
+    text-decoration: underline;
+}
+
+.faq-item {
+    margin-bottom: 24px;
+}
+
+.landing-links {
+    list-style: none;
+    padding: 0;
+    margin: 24px 0 0;
+}
+
+.landing-links li {
+    margin-bottom: 12px;
+}
+
+.landing-links a {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.tagline {
+    color: #666;
+    font-size: 15px;
+    margin-top: 4px;
+}

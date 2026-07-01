@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help &amp; FAQ — Nepsis</title>
+    <link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<div class="container">
+    <header class="site-header">
+        <a class="site-brand" href="../">Nepsis</a>
+        <p class="tagline">Screen time control</p>
+        <nav class="site-nav" aria-label="Site">
+            <a href="../privacy/">Privacy</a>
+            <a href="../terms/">Terms</a>
+            <a href="../help/" class="active">Help &amp; FAQ</a>
+            <a href="../support/">Support</a>
+            <a href="../about/">About</a>
+        </nav>
+    </header>
+
+    <h1>Help &amp; FAQ</h1>
+    <p class="date">Last Updated: July 2026</p>
+
+    <p>Quick answers to common questions about Nepsis. For anything not covered here, see <a href="../support/">Contact Support</a>.</p>
+
+    <div class="faq-item">
+        <h3>How do I grant Screen Time permission?</h3>
+        <p>Nepsis needs Apple's Screen Time authorization to block apps. When prompted, tap <strong>Continue</strong> and approve access in the system dialog. If you previously denied it, go to <strong>Settings → Screen Time</strong> and ensure the app has permission, or reinstall Nepsis and accept when asked.</p>
+        <p>You can also check status in Nepsis under <strong>Settings → Permissions &amp; Diagnostics</strong>.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>Why isn't my block working?</h3>
+        <p>Common causes:</p>
+        <ul>
+            <li>Screen Time permission was not granted or was revoked in iOS Settings</li>
+            <li>The rule schedule hasn't started yet, or the rule is paused</li>
+            <li>The app you want to block wasn't selected in the rule (Screen Time requires you to pick apps via Apple's picker)</li>
+            <li>iOS Focus modes or Downtime settings may interact with restrictions — check system Screen Time settings</li>
+        </ul>
+        <p>Try toggling the rule off and on, and verify permissions in <strong>Permissions &amp; Diagnostics</strong>.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>What is Strict mode?</h3>
+        <p>Strict mode adds extra friction before you can disable a block or change a rule — for example, requiring a passcode or a waiting period. It helps when you want stronger commitment to your limits.</p>
+        <p>If you set a passcode, it is stored locally on your device in the iOS Keychain and is not sent to us.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>I forgot my Strict mode passcode. What can I do?</h3>
+        <p>Passcodes are stored only on your device for privacy. We cannot recover or reset them remotely. If you are locked out, you may need to remove and reinstall the app (which clears local data) or reset related Keychain entries — note this will remove your local rules and settings.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>How does iCloud sync work?</h3>
+        <p>When enabled, Nepsis syncs rule metadata (names, schedules, protection settings) between your devices signed into the same iCloud account.</p>
+        <p><strong>Apple limitation:</strong> Screen Time app and category selections cannot be synced between devices. After syncing, you may need to re-select which apps to block on each iPhone or iPad. This is an iOS platform restriction, not a Nepsis bug.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>How do I restore my subscription?</h3>
+        <p>Open Nepsis, go to the subscription screen or <strong>Settings</strong>, and tap <strong>Restore Purchases</strong>. Make sure you are signed into the same Apple ID used for the original purchase.</p>
+        <p>If restore doesn't work, confirm the subscription is active under <strong>Settings → [Your Name] → Subscriptions</strong> on your device.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>How do I cancel my subscription?</h3>
+        <p>Subscriptions are managed by Apple, not inside Nepsis:</p>
+        <ol>
+            <li><strong>Settings → [Your Name] → Subscriptions</strong></li>
+            <li>Select Nepsis → <strong>Cancel Subscription</strong></li>
+        </ol>
+        <p>See our <a href="../terms/">Terms of Use</a> for billing details.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>What data does Nepsis collect?</h3>
+        <p>Nepsis is local-first: your Screen Time usage and blocks stay on your device. Optional iCloud sync uses Apple's iCloud. Subscriptions use RevenueCat with an anonymous device identifier — no account sign-up required.</p>
+        <p>Full details: <a href="../privacy/">Privacy Policy</a>.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>Do I need an account?</h3>
+        <p>No. Nepsis does not require registration. Your Apple ID is only used by Apple for App Store purchases and optional iCloud sync if you enable it.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>Notifications aren't working</h3>
+        <p>Enable notifications for Nepsis in <strong>Settings → Notifications → Nepsis</strong>. Check <strong>Permissions &amp; Diagnostics</strong> in the app for current status.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>Still need help?</h3>
+        <p>Email us at <a href="mailto:nepsis.support@gmail.com">nepsis.support@gmail.com</a> with your iOS version and app version. See <a href="../support/">Contact Support</a> for what to include.</p>
+    </div>
+
+    <footer class="site-footer">
+        <a href="../privacy/">Privacy</a>
+        <a href="../terms/">Terms</a>
+        <a href="../help/">Help &amp; FAQ</a>
+        <a href="../support/">Support</a>
+        <a href="../about/">About</a>
+    </footer>
+</div>
+</body>
+</html>
