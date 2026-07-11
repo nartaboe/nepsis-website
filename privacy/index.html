@@ -21,7 +21,7 @@
     </header>
 
     <h1>Privacy Policy</h1>
-    <p class="date">Last Updated: July 2026</p>
+    <p class="date">Last Updated: July 11, 2026</p>
 
     <p>We value your privacy. This Privacy Policy explains how the <strong>Nepsis</strong> application (hereinafter referred to as the "Application") handles user data.</p>
 
@@ -36,33 +36,50 @@
     <h2>2. Use of Screen Time API (FamilyControls)</h2>
     <p>The Application utilizes Apple's Screen Time API features to monitor and limit the time spent on other applications. All permissions are requested via standard iOS system dialogs. The data from this API is protected by Apple's built-in security mechanisms, never leaves your device, and is not used for advertising purposes.</p>
 
-    <h2>3. Optional iCloud Sync</h2>
-    <p>If you enable iCloud sync in the Application, certain rule metadata is synchronized between your Apple devices through Apple's iCloud Key-Value storage. This may include:</p>
+    <h2>3. iCloud Sync</h2>
+    <p>When you are signed into iCloud on your device, the Application may synchronize certain rule and settings metadata between your Apple devices using Apple's iCloud Key-Value Storage. There is currently no separate on/off switch for sync inside Nepsis settings; sync follows your device iCloud availability.</p>
+    <p>Synced data may include:</p>
     <ul>
-        <li>Rule names, schedules, and protection settings</li>
-        <li>Strict mode and passcode protection preferences (passcode itself is stored locally in the iOS Keychain — see Section 5)</li>
+        <li>Rule names, schedules, and protection / Strict preferences</li>
+        <li>Look and other settings metadata</li>
     </ul>
-    <p>iCloud sync is optional and controlled by you in the Application settings. Data synced via iCloud is subject to <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple's Privacy Policy</a>.</p>
-    <p><strong>Important:</strong> Due to Apple platform limitations, Screen Time app and category selections (tokens) cannot be synced between devices. After syncing, you may need to re-select apps on each device.</p>
+    <p>The following are <strong>not</strong> synced via iCloud:</p>
+    <ul>
+        <li>Screen Time app and category selections (FamilyActivitySelection tokens) — these cannot sync across devices due to Apple platform limitations</li>
+        <li>Your passcode hash, which remains in the local iOS Keychain on each device (see Section 5)</li>
+    </ul>
+    <p>Data synced via iCloud is subject to <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple's Privacy Policy</a>.</p>
+    <p><strong>Important:</strong> After syncing rule metadata to another device, you may need to re-select apps and categories on that device.</p>
 
     <h2>4. Third-Party Services and Subscription Data Processing</h2>
     <p>To provide and manage in-app purchases and subscriptions, the Application utilizes a third-party service, <strong>RevenueCat</strong> (RevenueCat, Inc.).</p>
     <p>RevenueCat collects and processes the following anonymized data:</p>
     <ul>
-        <li><strong>Identifiers:</strong> A random, anonymous alphanumeric identifier (User ID), automatically generated for your device to verify your subscription status.</li>
+        <li><strong>Identifiers:</strong> A random, anonymous alphanumeric identifier (app User ID), stored in the iOS Keychain on your device and used as RevenueCat's appUserID to verify your subscription status. It is not linked to your name, email, or other real-world identity.</li>
         <li><strong>Purchase History:</strong> Transaction information (purchase date, subscription type, renewal status) processed via encrypted Apple purchase receipts.</li>
     </ul>
-    <p>This data is transmitted to RevenueCat in an encrypted and strictly anonymous format. It is required solely to ensure the application's core functionality (verifying Premium access) and for internal sales analytics. This data is <strong>not linked</strong> to your identity and is not used for tracking across advertising networks.</p>
+    <p>This data is transmitted to RevenueCat in an encrypted and anonymous format. It is used for app functionality (verifying Premium access) and subscription analytics in the RevenueCat dashboard. It is <strong>not linked</strong> to your real-world identity and is <strong>not used for tracking</strong> (including advertising or cross-app tracking). The Application does not use advertising SDKs, IDFA, or App Tracking Transparency for advertising purposes.</p>
     <p>You can review the service's privacy policy on their official website: <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">RevenueCat Privacy Policy</a>.</p>
 
     <h2>5. Passcode and Local Storage</h2>
-    <p>If you enable Strict mode or passcode protection, your passcode is stored locally in the iOS Keychain on your device. It is never transmitted to us, RevenueCat, or any third party.</p>
-    <p>The Application may store non-sensitive preferences and local insights (such as usage summaries derived from Screen Time data) on your device only. This information is not sent to external servers.</p>
+    <p>If you enable Strict mode or passcode protection, a secure hash of your passcode (salted SHA-256) is stored in the iOS Keychain on your device — not the passcode itself in plaintext. The passcode and its hash are never transmitted to us, RevenueCat, or any third party.</p>
+    <p>You may optionally use Face ID or Touch ID (via Apple's LocalAuthentication) to unlock Strict passcode gates. Biometric evaluation happens locally on your device; we do not receive biometric data.</p>
+    <p>The Application may store non-sensitive preferences and local insights (such as usage summaries derived from Screen Time data) on your device only. This information is not sent to our servers.</p>
 
-    <h2>6. Changes to This Privacy Policy</h2>
+    <h2>6. Device Permissions and On-Device Processing</h2>
+    <p>Depending on which features you use, the Application may request the following iOS permissions. Sensor and challenge data from these features is processed on your device only and is not stored by us or uploaded to our servers (or to RevenueCat):</p>
+    <ul>
+        <li><strong>Camera</strong> — optional physical unlock challenges; processed on-device, not stored or transmitted.</li>
+        <li><strong>Microphone</strong> and <strong>Speech Recognition</strong> — optional vocal unlock challenges; processed on-device, not stored or transmitted.</li>
+        <li><strong>Face ID / Touch ID</strong> — optional local unlock for Strict passcode gates (see Section 5).</li>
+        <li><strong>Notifications</strong> — local delivery related to limits and rules.</li>
+    </ul>
+    <p>Permissions are requested through standard iOS system dialogs and only when you opt into the related features.</p>
+
+    <h2>7. Changes to This Privacy Policy</h2>
     <p>We may update this Privacy Policy from time to time. Changes become effective immediately upon their publication on this page. We recommend regularly checking this page for updates.</p>
 
-    <h2>7. Contact Us</h2>
+    <h2>8. Contact Us</h2>
     <p>If you have any questions regarding privacy or the operation of the Application, you can contact us via email at: <a href="mailto:nepsis.support@gmail.com">nepsis.support@gmail.com</a></p>
 
     <footer class="site-footer">

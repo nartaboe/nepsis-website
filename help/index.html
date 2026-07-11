@@ -21,7 +21,7 @@
     </header>
 
     <h1>Help &amp; FAQ</h1>
-    <p class="date">Last Updated: July 2026</p>
+    <p class="date">Last Updated: July 11, 2026</p>
 
     <p>Quick answers to common questions about Nepsis. For anything not covered here, see <a href="../support/">Contact Support</a>.</p>
 
@@ -46,18 +46,18 @@
     <div class="faq-item">
         <h3>What is Strict mode?</h3>
         <p>Strict mode adds extra friction before you can disable a block or change a rule — for example, requiring a passcode or a waiting period. It helps when you want stronger commitment to your limits.</p>
-        <p>If you set a passcode, it is stored locally on your device in the iOS Keychain and is not sent to us.</p>
+        <p>If you set a passcode, a secure hash of it is stored locally in the iOS Keychain — not the passcode itself — and is not sent to us. You can optionally use Face ID or Touch ID to unlock Strict gates on the same device.</p>
     </div>
 
     <div class="faq-item">
         <h3>I forgot my Strict mode passcode. What can I do?</h3>
-        <p>Passcodes are stored only on your device for privacy. We cannot recover or reset them remotely. If you are locked out, you may need to remove and reinstall the app (which clears local data) or reset related Keychain entries — note this will remove your local rules and settings.</p>
+        <p>Only a hash of your passcode is stored on your device; we cannot recover or reset it remotely. If you are locked out, you may need to remove and reinstall the app (which clears local data) or reset related Keychain entries — note this will remove your local rules and settings.</p>
     </div>
 
     <div class="faq-item">
         <h3>How does iCloud sync work?</h3>
-        <p>When enabled, Nepsis syncs rule metadata (names, schedules, protection settings) between your devices signed into the same iCloud account.</p>
-        <p><strong>Apple limitation:</strong> Screen Time app and category selections cannot be synced between devices. After syncing, you may need to re-select which apps to block on each iPhone or iPad. This is an iOS platform restriction, not a Nepsis bug.</p>
+        <p>When your device is signed into iCloud, Nepsis automatically syncs rule metadata (names, schedules, protection/Strict preferences, and Look/settings metadata) between your devices on the same iCloud account via Apple's iCloud Key-Value Storage. There is currently no separate sync on/off switch inside Nepsis settings.</p>
+        <p><strong>Apple limitation:</strong> Screen Time app and category selections (tokens) cannot be synced between devices. After syncing, you may need to re-select which apps to block on each iPhone or iPad. Your passcode hash also stays local to each device. This is an iOS platform restriction, not a Nepsis bug.</p>
     </div>
 
     <div class="faq-item">
@@ -78,13 +78,13 @@
 
     <div class="faq-item">
         <h3>What data does Nepsis collect?</h3>
-        <p>Nepsis is local-first: your Screen Time usage and blocks stay on your device. Optional iCloud sync uses Apple's iCloud. Subscriptions use RevenueCat with an anonymous device identifier — no account sign-up required.</p>
+        <p>Nepsis is local-first: your Screen Time usage and blocks stay on your device. Rule metadata may sync via Apple's iCloud when available on the device. Subscriptions use RevenueCat with an anonymous User ID — no account sign-up required. Optional Camera, Microphone, Speech Recognition, and Face ID features process data on-device only.</p>
         <p>Full details: <a href="../privacy/">Privacy Policy</a>.</p>
     </div>
 
     <div class="faq-item">
         <h3>Do I need an account?</h3>
-        <p>No. Nepsis does not require registration. Your Apple ID is only used by Apple for App Store purchases and optional iCloud sync if you enable it.</p>
+        <p>No. Nepsis does not require registration. Your Apple ID is used by Apple for App Store purchases, and iCloud (when signed in on the device) may sync rule metadata automatically — there is no separate Nepsis account or in-app sync toggle.</p>
     </div>
 
     <div class="faq-item">
