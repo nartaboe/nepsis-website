@@ -10,7 +10,7 @@
 <div class="container">
     <header class="site-header">
         <a class="site-brand" href="../">Nepsis</a>
-        <p class="tagline">Screen time control</p>
+        <p class="tagline">Focus &amp; Digital Wellbeing</p>
         <nav class="site-nav" aria-label="Site">
             <a href="../privacy/">Privacy</a>
             <a href="../terms/">Terms</a>
@@ -21,14 +21,14 @@
     </header>
 
     <h1>Help &amp; FAQ</h1>
-    <p class="date">Last Updated: July 11, 2026</p>
+    <p class="date">Last Updated: July 16, 2026</p>
 
     <p>Quick answers to common questions about Nepsis. For anything not covered here, see <a href="../support/">Contact Support</a>.</p>
 
     <div class="faq-item">
         <h3>How do I grant Screen Time permission?</h3>
         <p>Nepsis needs Apple's Screen Time authorization to block apps. When prompted, tap <strong>Continue</strong> and approve access in the system dialog. If you previously denied it, go to <strong>Settings → Screen Time</strong> and ensure the app has permission, or reinstall Nepsis and accept when asked.</p>
-        <p>You can also check status in Nepsis under <strong>Settings → Permissions &amp; Diagnostics</strong>.</p>
+        <p>You can also check status in Nepsis under <strong>Settings → Permissions</strong>.</p>
     </div>
 
     <div class="faq-item">
@@ -40,29 +40,60 @@
             <li>The app you want to block wasn't selected in the rule (Screen Time requires you to pick apps via Apple's picker)</li>
             <li>iOS Focus modes or Downtime settings may interact with restrictions — check system Screen Time settings</li>
         </ul>
-        <p>Try toggling the rule off and on, and verify permissions in <strong>Permissions &amp; Diagnostics</strong>.</p>
+        <p>Try toggling the rule off and on, and verify permissions in <strong>Settings → Permissions</strong>.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>What's the difference between Daily Limits, Schedules, and Just Block?</h3>
+        <p>These are three ways to restrict an app, and you can combine them:</p>
+        <ul>
+            <li><strong>Daily Limits</strong> — give an app a daily time budget; once you use it up, the app is blocked until the limit resets.</li>
+            <li><strong>Schedules</strong> — automatically block apps during recurring time windows you set (for example, work hours or bedtime).</li>
+            <li><strong>Just Block</strong> — instantly block distracting apps right now, without setting up a limit or schedule first.</li>
+        </ul>
+    </div>
+
+    <div class="faq-item">
+        <h3>What are protection levels?</h3>
+        <p>Protection levels control how much friction stands between you and disabling or editing a rule: <strong>Easy</strong>, <strong>Focused</strong>, <strong>Committed</strong>, and <strong>Strict</strong>, in increasing order of friction. Higher levels are meant for when you want stronger commitment and less room to talk yourself out of a limit in the moment.</p>
     </div>
 
     <div class="faq-item">
         <h3>What is Strict mode?</h3>
-        <p>Strict mode adds extra friction before you can disable a block or change a rule — for example, requiring a passcode or a waiting period. It helps when you want stronger commitment to your limits.</p>
+        <p>Strict is the highest protection level. It adds friction before you can disable a block, edit a rule, or unblock an app — typically a passcode, and may also include gates or challenges depending on your configuration. It helps when you want the strongest commitment to your limits.</p>
         <p>If you set a passcode, a secure hash of it is stored locally in the iOS Keychain — not the passcode itself — and is not sent to us. You can optionally use Face ID or Touch ID to unlock Strict gates on the same device.</p>
     </div>
 
     <div class="faq-item">
         <h3>I forgot my Strict mode passcode. What can I do?</h3>
-        <p>Only a hash of your passcode is stored on your device; we cannot recover or reset it remotely. If you are locked out, you may need to remove and reinstall the app (which clears local data) or reset related Keychain entries — note this will remove your local rules and settings.</p>
+        <p>In the app, use <strong>Forgot Passcode?</strong> on the passcode screen. This starts a <strong>24-hour recovery cooldown</strong>:</p>
+        <ul>
+            <li>While the cooldown is running, your Strict rules stay protected and enforced as normal.</li>
+            <li>Once the 24 hours have passed, you'll be able to set a new passcode.</li>
+        </ul>
+        <p>Reinstalling the app or resetting local data is a last resort — it will erase your local rules and settings, so we recommend using <strong>Forgot Passcode?</strong> first.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>Why do Challenges ask for Camera, Microphone, or Speech access?</h3>
+        <p>Some Physical &amp; Mindful Challenges use these sensors to add a moment of friction before you can unblock an app — for example, movement-based challenges (like Shake it Off, Squat-to-Unlock, or Push-Up Gate), voice-based challenges (like Vocal Justification or Mindful Typing), or calming exercises (like Box Breathing, Calm the Storm, or Mirror Moment). These are examples — the exact set available may vary.</p>
+        <p>All challenge data (camera, microphone, speech) is processed entirely on your device and is never stored or transmitted anywhere. Access is only requested when you enable a challenge that needs it.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>What is Mindful Open / Pre-Open Friction?</h3>
+        <p>Mindful Open lets you add a brief pause or prompt before an app opens, using a Shortcuts automation you set up with Nepsis. It's designed to give you a moment to decide whether you really want to open the app right now, rather than blocking it outright.</p>
     </div>
 
     <div class="faq-item">
         <h3>How does iCloud sync work?</h3>
-        <p>When your device is signed into iCloud, Nepsis automatically syncs rule metadata (names, schedules, protection/Strict preferences, and Look/settings metadata) between your devices on the same iCloud account via Apple's iCloud Key-Value Storage. There is currently no separate sync on/off switch inside Nepsis settings.</p>
-        <p><strong>Apple limitation:</strong> Screen Time app and category selections (tokens) cannot be synced between devices. After syncing, you may need to re-select which apps to block on each iPhone or iPad. Your passcode hash also stays local to each device. This is an iOS platform restriction, not a Nepsis bug.</p>
+        <p>When your device is signed into iCloud, Nepsis automatically syncs rule metadata (names, schedules, protection/Strict preferences, and Block Screen appearance / settings metadata) between your devices on the same iCloud account via Apple's iCloud Key-Value Storage. There is currently no separate sync on/off switch inside Nepsis settings.</p>
+        <p><strong>Apple limitation:</strong> Screen Time app and category selections (tokens) cannot be synced between devices. After syncing, you may need to re-select which apps to block on each iPhone or iPad. Your passcode hash and your Insights / Weekly Report usage summaries also stay local to each device. This is an iOS platform restriction, not a Nepsis bug.</p>
     </div>
 
     <div class="faq-item">
-        <h3>How do I restore my subscription?</h3>
-        <p>Open Nepsis, go to the subscription screen or <strong>Settings</strong>, and tap <strong>Restore Purchases</strong>. Make sure you are signed into the same Apple ID used for the original purchase.</p>
+        <h3>Where do I restore my subscription?</h3>
+        <p>Open Nepsis and tap <strong>Restore Purchases</strong> — available on the subscription/paywall screen, or under <strong>Settings → Subscription</strong>. Make sure you are signed into the same Apple ID used for the original purchase.</p>
         <p>If restore doesn't work, confirm the subscription is active under <strong>Settings → [Your Name] → Subscriptions</strong> on your device.</p>
     </div>
 
@@ -78,18 +109,18 @@
 
     <div class="faq-item">
         <h3>What data does Nepsis collect?</h3>
-        <p>Nepsis is local-first: your Screen Time usage and blocks stay on your device. Rule metadata may sync via Apple's iCloud when available on the device. Subscriptions use RevenueCat with an anonymous User ID — no account sign-up required. Optional Camera, Microphone, Speech Recognition, and Face ID features process data on-device only.</p>
+        <p>Nepsis is local-first: your Screen Time usage, Insights, and Weekly Reports stay on your device. Rule and Block Screen settings metadata may sync via Apple's iCloud when available on the device. Subscriptions use RevenueCat with an anonymous User ID — no account sign-up required. Optional Camera, Microphone, Speech Recognition, and Face ID features process data on-device only.</p>
         <p>Full details: <a href="../privacy/">Privacy Policy</a>.</p>
     </div>
 
     <div class="faq-item">
         <h3>Do I need an account?</h3>
-        <p>No. Nepsis does not require registration. Your Apple ID is used by Apple for App Store purchases, and iCloud (when signed in on the device) may sync rule metadata automatically — there is no separate Nepsis account or in-app sync toggle.</p>
+        <p>No. Nepsis does not require registration. Your Apple ID is used by Apple for App Store purchases, and iCloud (when signed in on the device) may sync rule and settings metadata automatically — there is no separate Nepsis account or in-app sync toggle.</p>
     </div>
 
     <div class="faq-item">
         <h3>Notifications aren't working</h3>
-        <p>Enable notifications for Nepsis in <strong>Settings → Notifications → Nepsis</strong>. Check <strong>Permissions &amp; Diagnostics</strong> in the app for current status.</p>
+        <p>Enable notifications for Nepsis in <strong>Settings → Notifications → Nepsis</strong> (iOS system settings). Check <strong>Settings → Permissions</strong> in the app for current status.</p>
     </div>
 
     <div class="faq-item">
